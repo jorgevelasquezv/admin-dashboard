@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PagesComponent } from './pages.component';
 import { GraphOneComponent } from './graph-one/graph-one.component';
 import { GraphTwoComponent } from './graph-two/graph-two.component';
 import { GraphThreeComponent } from './graph-three/graph-three.component';
-import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { DashboardComponent } from './dashboard.component';
+import { ProgressComponent } from './progress/progress.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: PagesComponent,
+    component: DashboardComponent,
     children: [
+      {
+        path: 'progress',
+        component: ProgressComponent,
+      },
       {
         path: 'graph-one',
         component: GraphOneComponent,
@@ -24,10 +28,6 @@ const routes: Routes = [
         component: GraphThreeComponent,
       },
     ],
-  },
-  {
-    path: '**',
-    component: NotFoundPageComponent,
   },
 ];
 

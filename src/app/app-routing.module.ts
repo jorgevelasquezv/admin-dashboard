@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { NotFoundPageComponent } from './shared/pages/not-found-page/not-found-page.component';
+
 const routes: Routes = [
   {
     path: 'dashboard',
@@ -16,10 +18,16 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'dashboard',
   },
+  {
+    path: '**',
+    component: NotFoundPageComponent,
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
