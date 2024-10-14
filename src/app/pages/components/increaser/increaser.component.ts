@@ -10,28 +10,29 @@ export class IncreaserComponent {
   @Input('value') public currentValue: number = 0;
   @Input() public backgroundButton: string = 'btn-primary';
 
-  public changeValue(value: number) {
+  public changeValue(value: number): void {
     if (this.currentValue >= 100 && value > 0) {
       this.currentValue = 100;
-      this.emitValue();
-      return;
-    }
-
-    if (this.currentValue <= 0 && value < 0) {
+    } else if (this.currentValue <= 0 && value < 0) {
       this.currentValue = 0;
-      this.emitValue();
-      return;
+    } else {
+      this.currentValue += value;
     }
-
-    this.currentValue += value;
-    this.emitValue();
+    this.onChangeValue(this.currentValue);
   }
 
   public get styleButton(): string {
     return `btn ${this.backgroundButton}`;
   }
 
-  public emitValue() {
-    this.value.emit(this.currentValue);
+  public onChangeValue(value: number) {
+    if (value > 100) {
+      this.currentValue = 100;
+    } else if (value < 0) {
+      this.currentValue = 0;
+    } else {
+      this.currentValue = value;
+    }
+    this.value.emit(value);
   }
 }
