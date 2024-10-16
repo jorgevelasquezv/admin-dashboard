@@ -5,6 +5,7 @@ import { GraphTwoComponent } from './graph-two/graph-two.component';
 import { GraphThreeComponent } from './graph-three/graph-three.component';
 import { DashboardComponent } from './dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'graph-three',
         component: GraphThreeComponent,
+      },
+      {
+        path: 'settings',
+        component: AccountSettingsComponent,
       },
     ],
   },

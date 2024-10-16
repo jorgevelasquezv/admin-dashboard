@@ -16,6 +16,7 @@ import { GraphOneComponent } from './graph-one/graph-one.component';
 import { GraphTwoComponent } from './graph-two/graph-two.component';
 import { GraphThreeComponent } from './graph-three/graph-three.component';
 import { ProgressComponent } from './progress/progress.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ProgressComponent } from './progress/progress.component';
     GraphTwoComponent,
     GraphThreeComponent,
     ProgressComponent,
+    AccountSettingsComponent,
   ],
   imports: [CommonModule, ComponentsModule, PagesRoutingModule, SharedModule],
 })
