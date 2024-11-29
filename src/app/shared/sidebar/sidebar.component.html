@@ -45,7 +45,12 @@
           <ul [ngClass]="collapseClass">
             @for (subItem of item.submenu; track $index) {
             <li>
-              <a [routerLink]="subItem.url">{{ subItem.title }}</a>
+              <a
+                [routerLink]="subItem.url"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >{{ subItem.title }}</a
+              >
             </li>
             }
           </ul>

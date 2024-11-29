@@ -8,10 +8,12 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () =>
       import('./pages/pages.module').then((m) => m.PagesModule),
+    data: { title: 'Dashboard' },
   },
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+    data: { title: 'Auth' },
   },
   {
     path: '',
@@ -25,9 +27,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
